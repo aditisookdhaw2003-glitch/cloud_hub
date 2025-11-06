@@ -1,0 +1,68 @@
+{
+  "endpoints": [
+    {
+      "endpoint_id": 1,
+      "node_id": 1,
+      "type": "sensor_hat",
+      "status": "active"
+    },
+    {
+      "endpoint_id": 2,
+      "node_id": 2,
+      "type": "motion_sensor",
+      "status": "active"
+    },
+    {
+      "endpoint_id": 3,
+      "node_id": 3,
+      "type": "smart_plug",
+      "status": "active"
+    }
+  ],
+  "sensors": [
+    {
+      "sensor_id": 1,
+      "endpoint_id": 1,
+      "type": "temperature",
+      "last_value": 30,
+      "units": "°C"
+    },
+    {
+      "sensor_id": 2,
+      "endpoint_id": 1,
+      "type": "humidity",
+      "last_value": 60,
+      "units": "%"
+    },
+    {
+      "sensor_id": 3,
+      "endpoint_id": 1,
+      "type": "light",
+      "last_value": 450,
+      "units": "lux"
+    },
+    {
+      "sensor_id": 4,
+      "endpoint_id": 2,
+      "type": "motion",
+      "last_value": 1,
+      "units": "boolean"
+    },
+    {
+      "sensor_id": 2,
+      "endpoint_id": 2,
+      "type": "contact",
+      "last_value": "closed",
+      "units": "state"
+    }
+  ],
+  "clusters": [
+    {
+      "cluster_id": 1,
+      "endpoint_id": 3,
+      "type": "on_off",
+      "current_state": "off"
+    }
+  ],
+  "logs": []
+}
