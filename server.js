@@ -12,6 +12,8 @@ const usersRoutes = require("./routes/users");
 const sensorsRoutes = require("./routes/sensors");
 const logsRoutes = require("./routes/logs");
 const alertsRoutes = require("./routes/alerts");
+const mqttRoute = require("./routes/mqtt");
+
 
 const app = express();
 
@@ -28,6 +30,8 @@ app.use(bodyParser.json());
 
 
 //app.use(authMiddleware);
+app.use("/mqtt", mqttRoute);
+
 app.use('/sensors', authMiddleware, sensorsRoutes);
 app.use('/logs', authMiddleware, logsRoutes);
 
