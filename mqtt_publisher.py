@@ -16,13 +16,20 @@ client.tls_set()  # Use TLS for security
 client.username_pw_set(username, password)
 client.connect(broker, port)
 
-# Read your backend logs (db.json)
 with open("db.json", "r") as f:
-    logs = json.load(f)
+    data = json.load(f)
+
+# Handle both cases: either list or { "logs": [...] }
+logs = data.get("logs", data)
+
+if isinstance(logs, list) and len(logs) > 0:
+    last_log = logs[-1]
+else:
+    raise ValueError("No logs found in db.json")
 
 # Example: send ON/OFF based on last action
-# Adjust this logic if you want to send all logs or filter
-last_log = logs[-1]  # get the last entry
+action = last_log.get("action", "").lower()
+
 action = last_log.get("action", "").lower()
 
 if "on" in action:
