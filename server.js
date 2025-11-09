@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 
 
 //app.use(authMiddleware);
-//app.use("/mqtt", mqttRoute);
+app.use("/mqtt", mqttRoute);
 
 app.use('/sensors', authMiddleware, sensorsRoutes);
 app.use('/logs', authMiddleware, logsRoutes);
