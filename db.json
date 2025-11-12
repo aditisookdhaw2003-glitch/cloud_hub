@@ -37,9 +37,9 @@
     {
       "sensor_id": 3,
       "endpoint_id": 1,
-      "type": "light",
+      "type": "pressure",
       "last_value": 450,
-      "units": "lux"
+      "units": "hPa"
     },
     {
       "sensor_id": 4,
